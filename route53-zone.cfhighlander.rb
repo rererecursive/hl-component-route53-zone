@@ -5,6 +5,7 @@ CfhighlanderTemplate do
     ComponentParam 'EnvironmentType', 'development', isGlobal: true
     ComponentParam 'CreateZone', 'false', allowedValues: ['true','false']
     ComponentParam 'RootDomainName'
+    ComponentParam 'HostedZoneName', ''
     ComponentParam 'AddNSRecords', 'false', allowedValues: ['true','false']
     ComponentParam 'ParentIAMRole', ''
   end
