@@ -46,7 +46,7 @@ CloudFormation do
     Condition 'LocalNSRecords'
     HostedZoneName Ref('RootDomainName')
     Comment FnJoin('',[FnSub('${EnvironmentName} - NS Records for ${EnvironmentName}.'), Ref('RootDomainName')])
-    Name dns_domain
+    Name FnIf('HostedZoneNameProvided', Ref('HostedZoneName'), dns_domain)
     Type 'NS'
     TTL 60
     ResourceRecords FnGetAtt('HostedZone', 'NameServers')
